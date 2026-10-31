@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Pinterest Keyboard Navigator",
+  "version": "1.4",
+  "description": "Navigate Pinterest pins with arrow keys.",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": ["*://*.pinterest.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.pinterest.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "128": "icon.png"
+  }
+}
